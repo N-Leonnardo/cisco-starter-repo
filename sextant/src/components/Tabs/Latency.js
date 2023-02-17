@@ -22,7 +22,7 @@ export default function Latency() {
     ws.onmessage = function (event) {
       const json = JSON.parse(event.data);
       try {
-        let newLatency = json - oldLatency;
+        let newLatency = new Date().getTime() - json;
         setUserLatency(newLatency);
         oldLatency = json;
       } catch (err) {
