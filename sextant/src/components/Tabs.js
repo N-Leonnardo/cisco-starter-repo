@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../style/Tabs.css";
+import Ipv4 from "./Tabs/Ipv4";
+import Ipv6 from "./Tabs/Ipv6";
 
 export default function Tabs() {
   const [tab1, setTab1] = useState(true);
@@ -23,7 +25,7 @@ export default function Tabs() {
             setTab1(true);
           }}
         >
-          Comp 1
+          Ipv4
         </button>
         <button
           onClick={(e) => {
@@ -31,7 +33,7 @@ export default function Tabs() {
             setTab2(true);
           }}
         >
-          Comp 2
+          Ipv6
         </button>
         <button
           onClick={(e) => {
@@ -51,8 +53,16 @@ export default function Tabs() {
         </button>
       </div>
       <div className="tab-view">
-        {tab1 && <div>Component 1</div>}
-        {tab2 && <div>Component 2</div>}
+        {tab1 && (
+          <div>
+            <Ipv4 />
+          </div>
+        )}
+        {tab2 && (
+          <div>
+            <Ipv6 />
+          </div>
+        )}
         {tab3 && <div>Component 3</div>}
         {tab4 && <div>Component 4</div>}
       </div>
