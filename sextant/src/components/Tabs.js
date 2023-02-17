@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../style/Tabs.css";
 import Ipv4 from "./Tabs/Ipv4";
 import Ipv6 from "./Tabs/Ipv6";
+import Latency from "./Tabs/Latency";
 
 export default function Tabs() {
   const [tab1, setTab1] = useState(true);
@@ -41,7 +42,7 @@ export default function Tabs() {
             setTab3(true);
           }}
         >
-          Comp 3
+          Latency
         </button>
         <button
           onClick={(e) => {
@@ -63,7 +64,11 @@ export default function Tabs() {
             <Ipv6 />
           </div>
         )}
-        {tab3 && <div>Component 3</div>}
+        {tab3 && (
+          <div>
+            <Latency />
+          </div>
+        )}
         {tab4 && <div>Component 4</div>}
       </div>
     </div>
