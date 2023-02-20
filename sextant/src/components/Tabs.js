@@ -44,14 +44,6 @@ export default function Tabs() {
         >
           Latency
         </button>
-        <button
-          onClick={(e) => {
-            clearTabs();
-            setTab4(true);
-          }}
-        >
-          Comp 4
-        </button>
       </div>
       <div className="tab-view">
         {tab1 && (
@@ -69,7 +61,6 @@ export default function Tabs() {
             <Latency />
           </div>
         )}
-        {tab4 && <div>Component 4</div>}
       </div>
     </div>
   );
